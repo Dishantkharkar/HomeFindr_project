@@ -1,10 +1,8 @@
-Certainly! Here's a template for a README file for your HomeFindr project on GitHub:
-
----
+# HomeFindr - Empowering Home Search through Data and Analytics
 
 # HomeFindr Project
+![261839428-22f67b10-5430-4009-b6fb-7bb2d2ab98be](https://github.com/Dishantkharkar/HomeFindr_project/assets/130529528/8656ac54-c1a1-41ec-9e93-cac41baedd3e)
 
-![HomeFindr Logo]("C:\Users\disha\Downloads\real-estate-house-finder-logo-template-vector-21245325.jpg") <!-- Replace with the actual logo path -->
 
 Welcome to the HomeFindr project repository! HomeFindr is a data-driven platform designed to simplify and enhance the process of finding your dream home in metro cities of India. This README provides an overview of the project, its modules, features, and how to get started.
 
