@@ -88,6 +88,4 @@ We welcome contributions from the community! If you have ideas, suggestions, or 
 
 This project is licensed under the [MIT License](LICENSE).
 
----
 
-Feel free to customize this README template according to your project's specific details and needs. Ensure you update placeholders such as the logo path, website URL, and other relevant information.
