@@ -5,6 +5,6 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.write("# Welcome to Streamlit! 👋")
+st.write("# Welcome to HomeFindr: Your Dream Home 👋")
 
 st.sidebar.success("Select a demo above.")
