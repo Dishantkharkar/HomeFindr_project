@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#pkl file
+pipeline.pkl
+df.pkl
+
 # C extensions
 *.so
 
