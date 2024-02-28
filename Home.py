@@ -10,7 +10,7 @@ st.write("# Welcome to HomeFindr: Your Dream Home🏠 ")
 #st.sidebar.success("Select a demo above.")
 
 # Adding an image
-image = st.image("_b1938dcf-838e-4e56-a063-19ed4ec20ada.jpg", use_column_width=True)
+image = st.image("Homefindr icon.png", use_column_width=True)
 
 # Writing detailed information about the app
 st.write("""
