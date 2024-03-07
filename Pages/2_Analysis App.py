@@ -10,10 +10,11 @@ st.set_page_config(page_title="Plotting Demo")
 
 st.title('Analytics')
 
+# importing dataset
 new_df = pd.read_csv('data/data_viz1.csv')
 feature_text = pickle.load(open('data/feature_text.pkl','rb'))
 
-
+# Geomap
 group_df = new_df.groupby('sector').mean(numeric_only=True)[['price','price_per_sqft','built_up_area','latitude','longitude']]
 
 st.header('Sector Price per Sqft Geomap')
@@ -23,6 +24,7 @@ fig = px.scatter_mapbox(group_df, lat="latitude", lon="longitude", color="price_
 
 st.plotly_chart(fig,use_container_width=True)
 
+# for worldcloud
 st.header('Features Wordcloud')
 
 wordcloud = WordCloud(width = 800, height = 800,
@@ -39,6 +41,7 @@ st.pyplot()
 
 st.header('Area Vs Price')
 
+# adding option box for choosing flat and houses
 property_type = st.selectbox('Select Property Type', ['flat','house'])
 
 if property_type == 'house':
