@@ -6,9 +6,12 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.set_page_config(page_title="Plotting Demo")
+# set page title and layout
+st.set_page_config(page_title="Real Estate Analytics", layout="wide")
 
-st.title('Analytics')
+# Title and description
+st.title('Real Estate Analytics Dashboard')
+st.markdown('This dashboard provides insights into real estate data.')
 
 # importing dataset
 new_df = pd.read_csv('data/data_viz1.csv')
@@ -23,6 +26,70 @@ fig = px.scatter_mapbox(group_df, lat="latitude", lon="longitude", color="price_
                   mapbox_style="open-street-map",width=1200,height=700,hover_name=group_df.index)
 
 st.plotly_chart(fig,use_container_width=True)
+st.markdown('---') # adding horizonal line
+
+# Pie chart of BHK
+st.header('BHK Pie Chart')
+
+sector_options = new_df['sector'].unique().tolist()
+sector_options.insert(0,'overall')
+
+selected_sector = st.selectbox('Select Sector', sector_options, 
+                               format_func=lambda x: 'Overall' if x == 'overall' else x,
+                               help='Choose a sector',
+                               key="sector_select")  # Provide a unique key
+
+if selected_sector == 'overall':
+
+    fig2 = px.pie(new_df, names='bedRoom')
+
+    st.plotly_chart(fig2, use_container_width=True)
+else:
+
+    fig2 = px.pie(new_df[new_df['sector'] == selected_sector], names='bedRoom')
+
+    st.plotly_chart(fig2, use_container_width=True)
+st.markdown('---')  # Add a horizontal rule
+
+
+
+# scatter plot of Area vs Price
+st.header('scatter plot of Area vs Price')
+
+# adding option box for choosing flat and houses
+property_type = st.selectbox('Select Property Type', ['flat','house'],
+                             format_func=lambda x: 'House' if x == 'house' else 'Flat',
+                             help='Choose property type')
+
+if property_type == 'house':
+    fig1 = px.scatter(new_df[new_df['property_type'] == 'house'], x="built_up_area", y="price", color="bedRoom", title="Area Vs Price")
+
+    st.plotly_chart(fig1, use_container_width=True)
+else:
+    fig1 = px.scatter(new_df[new_df['property_type'] == 'flat'], x="built_up_area", y="price", color="bedRoom",
+                      title="Area Vs Price")
+
+    st.plotly_chart(fig1, use_container_width=True)
+st.markdown('---')  # Add a horizontal rule
+
+
+# Side by side BHK price camparision
+st.header('Side by Side BHK price comparison')
+
+fig3 = px.box(new_df[new_df['bedRoom'] <= 4], x='bedRoom', y='price', title='BHK Price Range')
+
+st.plotly_chart(fig3, use_container_width=True)
+st.markdown('---')  # Add a horizontal rule
+
+# Side by Side Distplot for property type
+st.header('Side by Side Distplot for property type')
+
+fig3 = plt.figure(figsize=(10, 4))
+sns.distplot(new_df[new_df['property_type'] == 'house']['price'],label='house')
+sns.distplot(new_df[new_df['property_type'] == 'flat']['price'], label='flat')
+plt.legend()
+st.pyplot(fig3)
+st.markdown('---')  # Add a horizontal rule
 
 # for worldcloud
 st.header('Features Wordcloud')
@@ -38,51 +105,4 @@ plt.axis("off")
 plt.tight_layout(pad = 0)
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot()
-
-st.header('Area Vs Price')
-
-# adding option box for choosing flat and houses
-property_type = st.selectbox('Select Property Type', ['flat','house'])
-
-if property_type == 'house':
-    fig1 = px.scatter(new_df[new_df['property_type'] == 'house'], x="built_up_area", y="price", color="bedRoom", title="Area Vs Price")
-
-    st.plotly_chart(fig1, use_container_width=True)
-else:
-    fig1 = px.scatter(new_df[new_df['property_type'] == 'flat'], x="built_up_area", y="price", color="bedRoom",
-                      title="Area Vs Price")
-
-    st.plotly_chart(fig1, use_container_width=True)
-
-st.header('BHK Pie Chart')
-
-sector_options = new_df['sector'].unique().tolist()
-sector_options.insert(0,'overall')
-
-selected_sector = st.selectbox('Select Sector', sector_options)
-
-if selected_sector == 'overall':
-
-    fig2 = px.pie(new_df, names='bedRoom')
-
-    st.plotly_chart(fig2, use_container_width=True)
-else:
-
-    fig2 = px.pie(new_df[new_df['sector'] == selected_sector], names='bedRoom')
-
-    st.plotly_chart(fig2, use_container_width=True)
-
-st.header('Side by Side BHK price comparison')
-
-fig3 = px.box(new_df[new_df['bedRoom'] <= 4], x='bedRoom', y='price', title='BHK Price Range')
-
-st.plotly_chart(fig3, use_container_width=True)
-
-
-st.header('Side by Side Distplot for property type')
-
-fig3 = plt.figure(figsize=(10, 4))
-sns.distplot(new_df[new_df['property_type'] == 'house']['price'],label='house')
-sns.distplot(new_df[new_df['property_type'] == 'flat']['price'], label='flat')
-plt.legend()
-st.pyplot(fig3)
+st.markdown('---')  # Add a horizontal rule
