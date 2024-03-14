@@ -1,8 +1,10 @@
 pandas
-numpy 
+numpy
 matplotlib
 seaborn
 bs4
 plotly
-worldcloud
-streamlit openai python-dotenv
+wordcloud
+streamlit
+openai
+python-dotenv
