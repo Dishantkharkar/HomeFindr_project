@@ -2,7 +2,8 @@
 
 ## Welcome to HomeFindr!
 
-![HomeFindr Logo](https://github.com/Dishantkharkar/HomeFindr_project/assets/130529528/8656ac54-c1a1-41ec-9e93-cac41baedd3e)
+![HomeFindr Logo](https://github.com/Dishantkharkar/HomeFindr_project/assets/130529528/0b1c15b3-2920-4d27-8a0b-64b9f5ec1cd8.png)
+
 
 Welcome to the HomeFindr project repository! HomeFindr is your ultimate guide in the journey of finding your dream home in the bustling metro cities of India. This README serves as your gateway to understanding the project, its modules, features, and how to seamlessly navigate through it.
 
