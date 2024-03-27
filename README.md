@@ -41,7 +41,8 @@ HomeFindr empowers users with data and analytics to make informed decisions whil
 
 4. **Deployment:**
    HomeFindr is deployed as a user-friendly web application, providing easy access to its features. The platform's intuitive interface ensures that users can seamlessly navigate through different modules and extract valuable information without any technical barriers.
-   [HomeFindr Website](https://www.homefindr.com)
+   
+   [HomeFindr Website]((https://homefindrproject-s8u5a6zhtlghguwufpzkjm.streamlit.app/))
 
 ## Getting Started
 
@@ -70,7 +71,7 @@ To get started with HomeFindr, follow these steps:
    ```
 
 5. **Access the Web Application:**
-   Open your browser and go to [http://localhost:5000](http://localhost:5000)
+   Open your browser and go to (https://homefindrproject-s8u5a6zhtlghguwufpzkjm.streamlit.app/))
 
 ## Usage
 
