@@ -8,3 +8,4 @@ wordcloud
 streamlit
 openai
 python-dotenv
+sklearn
