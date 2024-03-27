@@ -69,7 +69,7 @@ Embark on your home search journey with HomeFindr by following these simple step
 
 4. **Run the Application:**
    ```
-   python app.py
+   streamlit run Home.py
    ```
 
 5. **Access the Web Application:**
